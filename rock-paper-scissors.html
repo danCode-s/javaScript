@@ -34,12 +34,9 @@
     </p>
 
     <script>
-        const gameScore = 
-        {
-            wins : 0, 
-            lose : 0,
-            tie : 0,
-        }
+        const gameScore = JSON.parse(localStorage.getItem('score'));
+
+        
         
         function playGame(playerMove) {
             const computerMove = pickComputerMove();
@@ -72,7 +69,7 @@
                     result = 'You Win!';
                 }
             }
-            
+
             if (result === 'You Win!') {
                 gameScore.wins++;
             } else if (result === 'You Lose!'){
@@ -80,6 +77,8 @@
             } else {
                 gameScore.tie++;
             }
+
+            localStorage.setItem('score', JSON.stringify(gameScore));
 
             alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}\nWin: ${gameScore.wins} Lose: ${gameScore.lose} Tie: ${gameScore.tie}`);
 
