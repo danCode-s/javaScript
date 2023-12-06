@@ -9,8 +9,7 @@
     <p>
         <p>YouTube Subscribe Button</p>
         <button class="js-sub" onclick="
-        const subscribeButton = document.querySelector('.js-sub');
-        subscribeButton.innerHTML === 'Subscribe' ? subscribeButton.innerHTML = 'Subscribed' : subscribeButton.innerHTML = 'Subscribe';
+        subscribe();
         ">Subscribe</button>
     </p>
     <br>
@@ -28,6 +27,12 @@
         <p class="js-total-cost"></p>
     </p>
     <script>
+        function subscribe(){
+            const subscribeButton = document.querySelector('.js-sub');
+            subscribeButton.innerText === 'Subscribe' ? subscribeButton.innerHTML = 'Subscribed' : subscribeButton.innerHTML = 'Subscribe';
+
+        }
+
         
         
 
