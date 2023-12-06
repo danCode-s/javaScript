@@ -6,14 +6,42 @@
     <title>Coin Flip Game</title>
 </head>
 <body>
-    <script>
-        const randomNumber = Math.random();
-        let result = '';
+    <p>
+        <button onclick="
+        playGame('heads');">Heads</button>
 
-        randomNumber <= 0.5 ? result = 'heads' : result = 'tails';
-        guess = 'heads';
-        console.log(randomNumber);
-        guess === result ? console.log('You Win!') : console.log('You Lose!');
+        <button onclick="
+        playGame('tails');">Tails</button>
+
+        <button onclick="
+        gameScore.wins = 0;
+        gameScore.losses = 0;
+        localStorage.removeItem('score');">Clear Score</button>
+    </p>
+    <script>
+        let gameScore = JSON.parse(localStorage.getItem('score')) || { // access the saved score
+            wins : 0, 
+            losses : 0
+        };
+        function playGame(guess){
+            const randomNumber = Math.random(); // generate random number
+            let result = '';
+
+            randomNumber <= 0.5 ? result = 'heads' : result = 'tails'; //check random number and assign computer choice
+            console.log(randomNumber);
+
+            if (guess === result){ // check if player guess is same as computer guess
+                console.log(`You Win!`);
+                gameScore.wins += 1;
+            } else {
+                console.log(`You Lose!`);
+                gameScore.losses++;
+            }
+            console.log(`Current Score\nWins: ${gameScore.wins} Losses: ${gameScore.losses}`);
+        localStorage.setItem('score', JSON.stringify(gameScore)); // save current score
+
+        }
+
     </script>
 </body>
 </html>
