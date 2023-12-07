@@ -38,11 +38,13 @@
 
         }
         function calculateTotal(){
-            const orderCost = Number(document.querySelector('.cost-input').value);
-            if (orderCost >= 40){
-                document.querySelector('.js-total-cost').innerHTML = `$${orderCost + 10}`;
+            let orderCost = Number(document.querySelector('.cost-input').value);
+            orderCost *= 100;
+
+            if (orderCost <= 4000){
+                document.querySelector('.js-total-cost').innerHTML = `$${((orderCost + 1000) / 100 )}`;
             } else {
-                document.querySelector('.js-total-cost').innerHTML = `$${orderCost}`;
+                document.querySelector('.js-total-cost').innerHTML = `$${orderCost / 100}`;
             }
         }
         function handleCostKeydown(event){
