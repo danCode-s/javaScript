@@ -88,8 +88,7 @@
     <p>
         <button 
         onclick="
-        calculation = '';
-        console.log('Cleared!');
+        calculation = '0';
         displayCalculation();
         saveCalculation();">Clear</button>
         
@@ -97,11 +96,12 @@
 
     <script>
     
-        let calculation = localStorage.getItem('calc') || '';
         displayCalculation();
+        let calculation = localStorage.getItem('calc') || '';
+
+
         function updateCalculation(input_1) {
             calculation += input_1;
-            console.log(calculation);
             saveCalculation();
             displayCalculation();
             
