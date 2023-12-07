@@ -6,6 +6,8 @@
     <title>Calculator</title>
 </head>
 <body>
+    <p class="js-toCalculate"> </p>
+    
     <button 
     onclick="
     updateCalculation('1');
@@ -88,6 +90,7 @@
         onclick="
         calculation = '';
         console.log('Cleared!');
+        displayCalculation();
         saveCalculation();">Clear</button>
         
     </p>
@@ -95,15 +98,25 @@
     <script>
     
         let calculation = localStorage.getItem('calc') || '';
+        displayCalculation();
         function updateCalculation(input_1) {
             calculation += input_1;
             console.log(calculation);
-
+            saveCalculation();
+            displayCalculation();
+            
         }
         
         function saveCalculation() {
             localStorage.setItem('calc', calculation);
+            displayCalculation();
         }
+
+        function displayCalculation(){
+            document.querySelector('.js-toCalculate')
+            .innerHTML = `${localStorage.getItem('calc')}`;
+        }
+        
     </script>
 </body>
 </html>
