@@ -4,11 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document object model (DOM)</title>
+    <style>
+        .subscribe-button {
+            border: none;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .is-subscribed {
+            background-color: rgb(227, 224, 224);
+            color: black;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        
+        .calculate {
+            background-color: rgb(35, 179, 35);
+            color: white;
+            border: none;
+            padding : 12px 18px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        .calculate:hover{
+            background-color: green;
+        }
+
+        .cost-input {
+            width: 20vh;
+            height: 1.5rem;
+            border-radius: 8px;
+        }
+
+    </style>
 </head>
 <body>
     <p>
         <p>YouTube Subscribe Button</p>
-        <button class="js-sub" onclick="
+        <button class="js-sub subscribe-button" onclick="
         subscribe();
         ">Subscribe</button>
     </p>
@@ -28,15 +68,24 @@
         ">
         <button onclick="
         calculateTotal();
-        ">Calculate</button>
+        " class = 'calculate'>Calculate</button>
         <p class="js-total-cost"></p>
     </p>
+
     <script>
         function subscribe(){
             const subscribeButton = document.querySelector('.js-sub');
-            subscribeButton.innerText === 'Subscribe' ? subscribeButton.innerHTML = 'Subscribed' : subscribeButton.innerHTML = 'Subscribe';
 
+            if (subscribeButton.innerText === 'Subscribe'){
+                subscribeButton.innerHTML = 'Subscribed';
+                subscribeButton.classList.add('is-subscribed');
+
+            } else {
+                subscribeButton.innerHTML = 'Subscribe';
+                subscribeButton.classList.remove('is-subscribed');
+            }
         }
+
         function calculateTotal(){
             let orderCost = Number(document.querySelector('.cost-input').value);
             orderCost *= 100;
