@@ -6,7 +6,35 @@
     <title>Rock Paper Scissors</title>
 
     <style>
+        body{
+            background-color: rgb(58, 57, 57);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+        .top-btn {
+            border: 5px solid white;
+            border-radius: 100%;
+            width: 100px;
+            height: 100px;
+            font-size: 60px;
+        }
+        button{
+            background-color: rgb(58, 57, 57);
+            cursor: pointer;
+        }
+        .reset{
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            font-size: 20px;
+            border-radius: 35px;
 
+        }
+        .choice-elm, .js-score{
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -15,21 +43,23 @@
     <button
     onclick="
     playGame('✊');
-    "
+    " class="rock-btn top-btn"
     >✊</button>
 
     <button 
     onclick="
     playGame('✋');
     "
+    class="paper-btn top-btn"
     >✋</button>
 
     <button onclick="
     playGame('✌');
     "
+    class="scissors-btn top-btn"
     >✌</button>
 
-    <p class="js-choice"></p>
+    <p class="js-choice choice-elm"></p>
     <p class="js-score"></p>
     
     <p>
@@ -39,7 +69,8 @@
         gameScore.tie = 0;
         localStorage.removeItem('score');
         updateScoreElement();
-        ">Reset Score</button>
+        "
+        class="reset">Reset Score</button>
     </p>
 
     <script>
