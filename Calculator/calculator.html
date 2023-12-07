@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
 <body>
@@ -94,29 +95,6 @@
         
     </p>
 
-    <script>
-    
-        displayCalculation();
-        let calculation = localStorage.getItem('calc') || '';
-
-
-        function updateCalculation(input_1) {
-            calculation += input_1;
-            saveCalculation();
-            displayCalculation();
-            
-        }
-        
-        function saveCalculation() {
-            localStorage.setItem('calc', calculation);
-            displayCalculation();
-        }
-
-        function displayCalculation(){
-            document.querySelector('.js-toCalculate')
-            .innerHTML = `${localStorage.getItem('calc')}`;
-        }
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
