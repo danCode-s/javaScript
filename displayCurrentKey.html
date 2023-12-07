@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displaying current click</title>
+</head>
+<body>
+    <input type="text" class="js-input" onkeyup="
+        handleCurrentKey();
+        ">
+    <p class="js-keyPress"></p>    
+    <script>
+        let savingValue = '';
+        function handleCurrentKey(){
+            const inputElement = document.querySelector('.js-input');
+            document.querySelector('.js-keyPress')
+            .innerHTML = inputElement.value;
+        }
+    </script>
+</body>
+</html>
