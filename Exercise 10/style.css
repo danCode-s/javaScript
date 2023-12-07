@@ -1,0 +1,30 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.amazon-btn{
+    margin-top: 20px;
+    padding: 10px 35px;
+    background-color: rgb(255, 216, 20);
+    border-radius: 20px;
+}
+
+.uber-btn{
+    margin-top: 50px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.uber-0-btn{
+    background-color: black;
+    color: white
+}
+.uber-1-btn{
+    margin-left: 10px;
+    background-color: rgb(230, 230, 230);
+
+}
