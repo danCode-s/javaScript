@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>two Buttons</title>
+    <title>More Buttons</title>
 </head>
 <body>
     <button class="amazon-btn">Add to Cart</button>
     <br>
     <button class="uber-0-btn uber-btn">Request Now</button>
     <button class="uber-1-btn uber-btn">Schedule for Later</button>
+    <br>
+    <button class="game-btn toggles" onclick="
+    buttonClickColor('.game-btn');
+    ">Gaming</button>
+    <button class="music-btn toggles" onclick="
+    buttonClickColor('.music-btn');
+    ">Music</button>
+    <button class="tech-btn toggles" onclick="
+    buttonClickColor('.tech-btn');
+    ">Tech</button>
+
+    <script src="script.js"></script>
 </body>
 </html>

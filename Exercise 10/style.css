@@ -26,5 +26,16 @@ button{
 .uber-1-btn{
     margin-left: 10px;
     background-color: rgb(230, 230, 230);
+}
 
+.toggles {
+    margin-top: 20px;
+    padding: 10px 10px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 5px;
+}
+
+.is-toggled{
+    background-color: black;
+    color: white;
 }
