@@ -75,3 +75,22 @@ function countWords(words) {
 }
 
 console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+
+const arr1 = ['hello', 'search', 'new', 'search'];
+function findIndex(array, word){
+    let final = 0;
+    for (let i = 0; i < array.length; i++){
+        if (array[i] === word){
+            final = i;
+            break;
+        } else {
+            final = -1;
+        
+            
+        }
+    }
+    console.log(final);
+}
+
+findIndex(arr1, 'new');
