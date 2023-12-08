@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+button{
+    border: none;
+    font-size: 3.5vh;
+    background-color: rgb(67, 66, 66);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 8px;
+}
