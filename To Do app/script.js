@@ -4,21 +4,32 @@ renderToDo();
 
 function takeToDo(){
     const inputElement = document.querySelector('.js-input');
+    const dateElement = document.querySelector('.js-due-date');
     const name = inputElement.value;
-    toDoList.push(name);
+    const dueDate = dateElement.value;
 
+    
+    toDoList.push({
+        name,
+        dueDate
+    })
+    
+    console.log(toDoList);
     inputElement.value = '';
+    
     renderToDo();
-
     
 }
 function renderToDo(){
 
     let finalToDo = '';
     for (let i = 0; i < toDoList.length; i++){
-        console.log(i);
+        const todoObject = toDoList[i];
+
+        const { name, dueDate } = todoObject;
+        
         const list = `
-        <p>${toDoList[i]}
+        <p>${name}${dueDate}
             <button onclick="
             toDoList.splice(${i}, 1);
             renderToDo();
