@@ -12,6 +12,7 @@ body {
     vertical-align: middle;
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
+    color: white;
 }
 
 button{
@@ -19,8 +20,29 @@ button{
     font-size: 3.5vh;
     background-color: rgb(67, 66, 66);
     color: white;
-    padding: 1.5rem 2rem;
-    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    border-radius: 70px ;
     cursor: pointer;
     margin: 8px;
+}
+
+.clear-btn {
+    height: 90px;
+    width: 90px;
+    font-size: 3vh;
+}
+
+.orn-btn {
+    background-color: orange;
+}
+
+.calculation-hub{
+    margin-bottom: 5px;
+    font-size: 4vh;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: rgb(58, 56, 56);
 }
