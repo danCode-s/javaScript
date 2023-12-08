@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>To Do App</title>
 </head>
 <body>
     <p>To Do List</p>
-    <input type="text" class="js-input" placeholder="To Do Name">
-    <input type="date" class="js-due-date">
+    <div class="todo-input-grid">
+    <input type="text" class="js-input to-do-input" placeholder="To Do Name">
+    <input type="date" class="js-due-date date-input">
     <button class="js-add add-btn" onclick="
     takeToDo();
     ">Add</button>
-    <div class="js-output"></div>
+    </div>
+    
+    <div class="js-output todo-grid"></div>
 
 
     <script src="script.js"></script>
