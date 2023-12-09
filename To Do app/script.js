@@ -1,27 +1,31 @@
-const toDoList = [];
-
+let toDoList = [];
+saveList();
 renderToDo();
 
 function takeToDo(){
+    
     const inputElement = document.querySelector('.js-input');
     const dateElement = document.querySelector('.js-due-date');
     const name = inputElement.value;
     const dueDate = dateElement.value;
 
-    
     toDoList.push({
         name,
         dueDate
-    })
+    });
+
     
+    
+    
+    getList();
     console.log(toDoList);
     inputElement.value = '';
     
     renderToDo();
-    
+
 }
 function renderToDo(){
-
+    
     let finalToDo = '';
     for (let i = 0; i < toDoList.length; i++){
         const todoObject = toDoList[i];
@@ -34,6 +38,7 @@ function renderToDo(){
             <button onclick="
             toDoList.splice(${i}, 1);
             renderToDo();
+            getList();
             " class="red-btn">
             Delete</button>
         
@@ -43,5 +48,13 @@ function renderToDo(){
 
     document.querySelector('.js-output')
         .innerHTML = finalToDo;
-}
     
+        
+}
+
+function saveList(){
+    toDoList = JSON.parse(localStorage.getItem('list'));
+}
+function getList(){
+    localStorage.setItem('list', JSON.stringify(toDoList));
+}
