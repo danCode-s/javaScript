@@ -26,16 +26,14 @@ function takeToDo(){
 function renderToDo(){
     
     let finalToDo = '';
-    for (let i = 0; i < toDoList.length; i++){
-        const todoObject = toDoList[i];
-
+    toDoList.forEach(function(todoObject, index){
         const { name, dueDate } = todoObject;
 
         const list = `
         <div>${name}</div>
         <div>${dueDate}</div>
             <button onclick="
-            toDoList.splice(${i}, 1);
+            toDoList.splice(${index}, 1);
             renderToDo();
             getList();
             " class="red-btn">
@@ -43,7 +41,7 @@ function renderToDo(){
         
         `;
         finalToDo += list;
-    }
+    });
 
     document.querySelector('.js-output')
         .innerHTML = finalToDo;
