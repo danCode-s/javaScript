@@ -1,21 +1,21 @@
 
 function removeEgg(foods){
-    let counter = 1;
+    let counter = 0;
     let finalArr = [];
+    const food = foods.reverse();
     for (let i = 0; i < foods.length; i++){
-
-
         // finalArr.push(foods[i]);
-        if(foods[i] === 'egg' && counter <= 2){
+        if(food[i] === 'egg' && counter <= 2){
             counter++;
             continue;
         } else {
-            finalArr.push(foods[i]);
+            finalArr.push(food[i]);
         }
-
-    
+        
+        
     }
-        return finalArr;
+    console.log(food);
+    return finalArr;
 
     
     // console.log(finalArr);
