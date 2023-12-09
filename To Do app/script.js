@@ -14,11 +14,10 @@ function takeToDo(){
         dueDate
     });
 
-    
-    
-    
+
     getList();
-    console.log(toDoList);
+
+
     inputElement.value = '';
     
     renderToDo();
