@@ -97,23 +97,3 @@ findIndex(arr1, 'new');
 
 
 
-function removeEgg(foods){
-    let counter = 0;
-    let finalArr = [];
-    for (let i = 0; i < foods.length; i++){
-
-        if (foods[i] == 'egg'){
-            counter++;
-
-            continue;
-        }else {
-            finalArr.push(foods[i]);
-        }
-    
-    }
-    console.log(counter);
-    console.log(finalArr);
-
-}
-
-removeEgg(['pasta', 'egg', 'egg', 'chicken', 'egg']);
