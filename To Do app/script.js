@@ -1,8 +1,13 @@
-let toDoList = [];
+let toDoList = ['make dinner'];
+
+
 saveList();
+
 renderToDo();
 
 function takeToDo(){
+    saveList();
+
     
     const inputElement = document.querySelector('.js-input');
     const dateElement = document.querySelector('.js-due-date');
@@ -11,7 +16,7 @@ function takeToDo(){
 
     toDoList.push({
         name,
-        dueDate
+        dueDate,
     });
 
 
@@ -24,9 +29,9 @@ function takeToDo(){
 
 }
 function renderToDo(){
-    
+
     let finalToDo = '';
-    toDoList.forEach(function(todoObject, index){
+    toDoList.forEach((todoObject, index) => {
         const { name, dueDate } = todoObject;
 
         const list = `
