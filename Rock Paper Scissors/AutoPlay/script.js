@@ -49,53 +49,9 @@ document.querySelector('.scissors-btn')
         playGame('✌');
     });
 
-function resetButton(){ 
-    document.querySelector('.js-reset-btn')
-        .addEventListener('click', () => {
-            const alert = document.querySelector('.full');
-            alert.innerHTML = `
-            <p>Are You Sure You Want to Reset Score? 
-            <button class="yes-btn">Yes</button><button class="no-btn">No</button>
-            `;
-            document.querySelector('.yes-btn')
-                .addEventListener('click', () => {
-                    gameScore.lose = 0;
-                    gameScore.wins = 0;
-                    gameScore.tie = 0;
-                    localStorage.removeItem('score');
-                    updateScoreElement();
-                    alert.innerHTML = '';
-                })
-            document.querySelector('.no-btn')
-                .addEventListener('click', () => {
-                    alert.innerHTML = '';
-                })
-            
-        });
-};
-resetButton();
-     
-document.querySelector('.js-auto-play')
-    .addEventListener('click', () => {
-        autoPlay();
-    });
 
 
-document.body
-    .addEventListener('keydown', (event) => {
-    console.log(event.key);
-    if (event.key === 'r'){
-        playGame('✊');
-    } else if (event.key === 'p'){
-        playGame('✋');
-    } else if ( event.key === 's'){
-        playGame('✌');
-    } else if ( event.key === 'Backspace'){
-        resetButton();
-    } else if ( event.key === 'a'){
-        autoPlay();
-    }
-});
+
 
 
 
@@ -170,3 +126,73 @@ function pickComputerMove(){
     return computerMove;
 
 }
+
+document.querySelector('.js-reset-btn')
+        .addEventListener('click', () => {
+            showResetButton();
+});
+
+function showResetButton(){
+    const alert = document.querySelector('.full');
+    
+            
+            alert.innerHTML = `
+            <p class ='fill'>
+                <span>Are You Sure You Want to Reset Score?</span>
+                <button class="yes-btn">Yes</button><button class="no-btn">No</button>
+            </p>
+            `;
+            document.querySelector('.yes-btn')
+                .addEventListener('click', () => {
+                    resetScore();
+                    hideReset();
+                    
+                })
+                document.querySelector('.no-btn')
+                    .addEventListener('click', () => {
+                        hideReset();
+                })
+            
+                
+};
+
+
+function hideReset(){
+    document.querySelector('.full')
+        .innerHTML = ``;
+
+};
+
+function resetScore(){
+    gameScore.lose = 0;
+    gameScore.wins = 0;
+    gameScore.tie = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+
+};
+
+
+
+document.querySelector('.js-auto-play')
+.addEventListener('click', () => {
+    autoPlay();
+});
+    
+    
+document.body
+    .addEventListener('keydown', (event) => {
+    
+    if (event.key === 'r'){
+        playGame('✊');
+    } else if (event.key === 'p'){
+        playGame('✋');
+    } else if ( event.key === 's'){
+        playGame('✌');
+    } else if ( event.key === 'a'){
+        autoPlay();
+    } else if (event.key === 'Backspace'){
+        showResetButton();
+    }
+});
+

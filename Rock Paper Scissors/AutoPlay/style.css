@@ -28,3 +28,34 @@ button{
 .choice-elm, .js-score{
     font-size: 30px;
 }
+
+.yes-btn,
+.no-btn {
+    
+    background-color: white;
+    height: 3rem;
+    width: 5rem;
+    margin-left: 15px;
+    border:none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.fill {
+    
+    padding-top: 7px;
+    padding-left: 50px;
+    padding-bottom: 7px;
+    height: 50px;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    font-size: 20px;
+    border-radius: 30px;
+}
+.fill span{
+    display: flex;
+    align-items: center;
+
+}
