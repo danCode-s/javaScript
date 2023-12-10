@@ -1,3 +1,4 @@
+/*
 const add = function(){
     console.log(2 + 3);
 };
@@ -63,3 +64,43 @@ const titleChange = function (){
 
 }
 titleChange();
+*/
+
+const multiply = (num1, num2) => num1 * num2;
+
+console.log(multiply(2, 4));
+
+const countPositive = (arr) => {
+    let counter = 0;
+    arr.forEach((element) => {
+        if (element > 0){
+            counter++;
+        }
+
+    }) 
+    return counter;
+} 
+
+console.log(countPositive([1, -2, 2, 5,  5]));
+
+const addNum = (array, num) => {
+    return array.map(value => value + num);
+}
+
+console.log(addNum([1, 3, 3], 10));
+
+const removeEgg = function (egg){
+    let counter = 0;
+    return egg.filter((value, index) => {
+        if (value === 'egg' && counter < 2){
+            counter++;
+            return false;
+        } 
+        return true;
+        }
+        
+        
+    )
+}
+
+console.log(removeEgg(['egg', 'egg', 'new', 'hey', 'egg', 'chicken', 'egg']));
