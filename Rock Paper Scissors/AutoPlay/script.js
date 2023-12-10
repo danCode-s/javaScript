@@ -18,12 +18,16 @@ let intervalId;
 
 function autoPlay(){
     if(!isAutoPlaying){
+        document.querySelector('.js-auto-play')
+            .innerHTML = `Stop Playing`;
         intervalId = setInterval(() => {
             const playerMove = pickComputerMove();
             playGame(playerMove);
         }, 1000);
         isAutoPlaying = true;
     } else {
+        document.querySelector('.js-auto-play')
+            .innerHTML = `Auto Play`;
         clearInterval(intervalId);
         isAutoPlaying = false;
     }
@@ -67,8 +71,12 @@ document.body
         playGame('✋');
     } else if ( event.key === 's'){
         playGame('✌');
+    } else if ( event.key === 'a'){
+        autoPlay();
     }
-})
+});
+
+
 
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
