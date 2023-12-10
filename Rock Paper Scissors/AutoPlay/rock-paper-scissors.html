@@ -11,21 +11,14 @@
     <p>Rock Paper Scissors</p>
 
     <button
-    onclick="
-    playGame('✊');
-    " class="rock-btn top-btn"
+    class="rock-btn top-btn"
     >✊</button>
 
     <button 
-    onclick="
-    playGame('✋');
-    "
     class="paper-btn top-btn"
     >✋</button>
 
-    <button onclick="
-    playGame('✌');
-    "
+    <button
     class="scissors-btn top-btn"
     >✌</button>
 
@@ -33,18 +26,11 @@
     <p class="js-score"></p>
     
     <p>
-        <button onclick="
-        gameScore.lose = 0;
-        gameScore.wins = 0;
-        gameScore.tie = 0;
-        localStorage.removeItem('score');
-        updateScoreElement();
-        "
-        class="reset">Reset Score</button>
+        <button
+        class="reset js-reset-btn">Reset Score</button>
 
-        <button class="auto-play" onclick="
-        autoPlay();
-        ">Auto Play</button>
+        <button class="auto-play js-auto-play"
+        >Auto Play</button>
     </p>
 
 

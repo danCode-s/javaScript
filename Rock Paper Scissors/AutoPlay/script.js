@@ -28,8 +28,35 @@ function autoPlay(){
         isAutoPlaying = false;
     }
 
-
 }
+
+document.querySelector('.rock-btn')
+    .addEventListener('click', () => {
+        playGame('✊');
+    });
+
+document.querySelector('.paper-btn')
+    .addEventListener('click', () => {
+        playGame('✋');
+    });
+
+document.querySelector('.scissors-btn')
+    .addEventListener('click', () => {
+        playGame('✌');
+    });
+
+document.querySelector('.js-reset-btn')
+    .addEventListener('click', () => {
+        gameScore.lose = 0;
+        gameScore.wins = 0;
+        gameScore.tie = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+    });
+document.querySelector('.js-auto-play')
+    .addEventListener('click', () => {
+        autoPlay();
+    });
 
 
 function playGame(playerMove) {
